@@ -1,0 +1,673 @@
+[gd_scene format=3 uid="uid://dmqj2erlt2o50"]
+
+[ext_resource type="PackedScene" uid="uid://c64iuh6o6v7hw" path="res://scenes/fvec_spinbox.tscn" id="1_464nk"]
+[ext_resource type="Script" uid="uid://b5rs2yjfarxn8" path="res://scenes/effect_gui.gd" id="1_wgaof"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wgaof"]
+bg_color = Color(0.10747974, 0.10747974, 0.10747967, 0.19215687)
+
+[node name="EffectGUI" type="Control" unique_id=2126326005]
+custom_minimum_size = Vector2(600, 600)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1391.0
+offset_bottom = 805.0
+script = ExtResource("1_wgaof")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1856819394]
+custom_minimum_size = Vector2(600, 600)
+layout_mode = 0
+offset_left = 1.0
+offset_right = 1391.0
+offset_bottom = 805.0
+color = Color(0.24705882, 0.27450982, 0.3019608, 0.38431373)
+
+[node name="presets_list" type="ItemList" parent="ColorRect" unique_id=1971500574]
+layout_mode = 0
+offset_left = 1058.0
+offset_top = 241.0
+offset_right = 1376.0
+offset_bottom = 679.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_wgaof")
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=289978614]
+layout_mode = 0
+offset_right = 377.0
+offset_bottom = 805.0
+color = Color(0.35436448, 0.44368893, 0.40698585, 0.3764706)
+
+[node name="ColorRect3" type="ColorRect" parent="." unique_id=1482072306]
+layout_mode = 0
+offset_left = 377.0
+offset_right = 720.0
+offset_bottom = 805.0
+color = Color(0.39505795, 0.3967919, 0.5074301, 0.3764706)
+
+[node name="ColorRect4" type="ColorRect" parent="." unique_id=555545867]
+layout_mode = 0
+offset_left = 720.0
+offset_right = 1038.0
+offset_bottom = 805.0
+color = Color(0.50156945, 0.37855485, 0.29604805, 0.3764706)
+
+[node name="op_base_lb" type="Label" parent="." unique_id=173768514]
+layout_mode = 0
+offset_top = 510.0
+offset_right = 112.0
+offset_bottom = 533.0
+text = "Operator Base"
+
+[node name="op_base_vsb" parent="op_base_lb" unique_id=1042046049 instance=ExtResource("1_464nk")]
+layout_mode = 1
+offset_top = 23.0
+offset_bottom = 55.0
+param_key = "op_base"
+
+[node name="op_fac_lb" type="Label" parent="." unique_id=873331552]
+layout_mode = 0
+offset_top = 564.0
+offset_right = 112.0
+offset_bottom = 587.0
+text = "Operator Fac"
+
+[node name="op_fac_vsb" parent="op_fac_lb" unique_id=181005699 instance=ExtResource("1_464nk")]
+layout_mode = 1
+offset_top = 23.0
+offset_bottom = 55.0
+param_key = "op_fac"
+
+[node name="col_depth_bounds_lb" type="Label" parent="." unique_id=581259947]
+layout_mode = 0
+offset_top = 8.0
+offset_right = 164.0
+offset_bottom = 31.0
+text = "Depth Bounds (color)"
+
+[node name="col_depth_bounds_vsb" parent="col_depth_bounds_lb" unique_id=1399549125 instance=ExtResource("1_464nk")]
+layout_mode = 1
+offset_top = 23.0
+offset_bottom = 55.0
+type = 1
+param_key = "col_depth_bounds"
+
+[node name="col_depth_smoothfac_lb" type="Label" parent="." unique_id=1828727506]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 69.0
+offset_right = 188.0
+offset_bottom = 92.0
+text = "depth smooth fac (color)"
+
+[node name="col_depth_bounds_vsb" parent="col_depth_smoothfac_lb" unique_id=1736043329 instance=ExtResource("1_464nk")]
+layout_mode = 1
+offset_top = 23.0
+offset_bottom = 55.0
+param_key = "col_depth_smoothfac"
+
+[node name="col_depth_fac_lb" type="Label" parent="." unique_id=482262317]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 133.0
+offset_right = 135.0
+offset_bottom = 182.0
+text = "depth  fac (color)
+"
+
+[node name="vsb" parent="col_depth_fac_lb" unique_id=1077871440 instance=ExtResource("1_464nk")]
+layout_mode = 1
+offset_top = 23.0
+offset_bottom = 55.0
+param_key = "col_depth_fac"
+
+[node name="col_lum_bounds_lb" type="Label" parent="." unique_id=1065663837]
+layout_mode = 0
+offset_top = 215.0
+offset_right = 202.0
+offset_bottom = 238.0
+text = "Luminance Bounds (color)"
+
+[node name="vsb" parent="col_lum_bounds_lb" unique_id=1637992681 instance=ExtResource("1_464nk")]
+layout_mode = 1
+offset_top = 23.0
+offset_bottom = 55.0
+type = 1
+param_key = "col_lum_bounds"
+
+[node name="col_lum_fac_lb" type="Label" parent="." unique_id=832768415]
+layout_mode = 0
+offset_top = 273.0
+offset_right = 202.0
+offset_bottom = 296.0
+text = "Luminance Fac (color)"
+
+[node name="vsb" parent="col_lum_fac_lb" unique_id=394347573 instance=ExtResource("1_464nk")]
+layout_mode = 1
+offset_top = 23.0
+offset_bottom = 55.0
+param_key = "col_lum_fac"
+
+[node name="vel_op_base_lb2" type="Label" parent="." unique_id=1989942916]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 514.0
+offset_right = 577.0
+offset_bottom = 537.0
+text = "Velocity Operator Base"
+
+[node name="op_base_vsb" parent="vel_op_base_lb2" unique_id=1117029329 instance=ExtResource("1_464nk")]
+layout_mode = 1
+offset_top = 23.0
+offset_bottom = 55.0
+param_key = "vel_op_base"
+
+[node name="vel_op_fac_lb2" type="Label" parent="." unique_id=1451783317]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 569.0
+offset_right = 566.0
+offset_bottom = 592.0
+text = "Velocity Operator Fac"
+
+[node name="op_fac_vsb" parent="vel_op_fac_lb2" unique_id=1840802465 instance=ExtResource("1_464nk")]
+layout_mode = 1
+offset_top = 23.0
+offset_bottom = 55.0
+param_key = "vel_op_fac"
+
+[node name="color_op_lb" type="Label" parent="." unique_id=955305230]
+layout_mode = 0
+offset_top = 375.0
+offset_right = 122.0
+offset_bottom = 424.0
+text = "operator (color)
+"
+
+[node name="op_op_ob" type="OptionButton" parent="color_op_lb" unique_id=883503538]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 27.0
+offset_right = 63.0
+offset_bottom = 58.0
+selected = 0
+item_count = 6
+popup/item_0/text = "one"
+popup/item_0/id = 0
+popup/item_1/text = "min"
+popup/item_1/id = 1
+popup/item_2/text = "mul"
+popup/item_2/id = 2
+popup/item_3/text = "add"
+popup/item_3/id = 3
+popup/item_4/text = "sub"
+popup/item_4/id = 4
+popup/item_5/text = "max"
+popup/item_5/id = 5
+
+[node name="color_op_lb2" type="Label" parent="." unique_id=644484525]
+layout_mode = 0
+offset_top = 439.0
+offset_right = 69.0
+offset_bottom = 488.0
+text = "param 1
+"
+
+[node name="op_p1_ob" type="OptionButton" parent="color_op_lb2" unique_id=243409475]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 27.0
+offset_right = 63.0
+offset_bottom = 58.0
+selected = 0
+item_count = 3
+popup/item_0/text = "depth"
+popup/item_0/id = 0
+popup/item_1/text = "luminance"
+popup/item_1/id = 1
+popup/item_2/text = "1.0 - luminance"
+popup/item_2/id = 2
+
+[node name="color_op_lb3" type="Label" parent="." unique_id=234218700]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 439.0
+offset_right = 229.0
+offset_bottom = 488.0
+text = "param 2
+"
+
+[node name="op_p2_ob" type="OptionButton" parent="color_op_lb3" unique_id=1111836729]
+layout_mode = 0
+offset_top = 27.0
+offset_right = 114.0
+offset_bottom = 58.0
+selected = 1
+item_count = 3
+popup/item_0/text = "depth"
+popup/item_0/id = 0
+popup/item_1/text = "luminance"
+popup/item_1/id = 1
+popup/item_2/text = "1.0 - luminance"
+popup/item_2/id = 2
+
+[node name="vel_depth_bounds_lb2" type="Label" parent="." unique_id=679530684]
+layout_mode = 0
+offset_left = 398.0
+offset_top = 8.0
+offset_right = 582.0
+offset_bottom = 31.0
+text = "Depth Bounds (velocity)"
+
+[node name="vsb" parent="vel_depth_bounds_lb2" unique_id=337506994 instance=ExtResource("1_464nk")]
+layout_mode = 1
+offset_top = 23.0
+offset_bottom = 55.0
+type = 1
+param_key = "vel_depth_bounds"
+
+[node name="vel_depth_smoothfac_lb2" type="Label" parent="." unique_id=2035294489]
+layout_mode = 0
+offset_left = 396.0
+offset_top = 69.0
+offset_right = 606.0
+offset_bottom = 92.0
+text = "depth smooth fac (velocity)"
+
+[node name="vsb" parent="vel_depth_smoothfac_lb2" unique_id=21240718 instance=ExtResource("1_464nk")]
+layout_mode = 1
+offset_top = 23.0
+offset_bottom = 55.0
+param_key = "vel_depth_smoothfac"
+
+[node name="vel_depth_fac_lb2" type="Label" parent="." unique_id=490963873]
+layout_mode = 0
+offset_left = 396.0
+offset_top = 133.0
+offset_right = 551.0
+offset_bottom = 156.0
+text = "depth  fac (velocity )"
+
+[node name="vsb" parent="vel_depth_fac_lb2" unique_id=618691703 instance=ExtResource("1_464nk")]
+layout_mode = 1
+offset_top = 23.0
+offset_bottom = 55.0
+param_key = "vel_depth_fac"
+
+[node name="vel_lum_bounds_lb2" type="Label" parent="." unique_id=656949930]
+layout_mode = 0
+offset_left = 398.0
+offset_top = 215.0
+offset_right = 620.0
+offset_bottom = 238.0
+text = "Luminance Bounds (velocity)"
+
+[node name="vsb" parent="vel_lum_bounds_lb2" unique_id=605415094 instance=ExtResource("1_464nk")]
+layout_mode = 1
+offset_top = 23.0
+offset_bottom = 55.0
+type = 1
+param_key = "vel_lum_bounds"
+
+[node name="vel_lum_fac_lb2" type="Label" parent="." unique_id=979162027]
+layout_mode = 0
+offset_left = 398.0
+offset_top = 273.0
+offset_right = 600.0
+offset_bottom = 296.0
+text = "Luminance Fac (velocity)"
+
+[node name="vsb" parent="vel_lum_fac_lb2" unique_id=1431437623 instance=ExtResource("1_464nk")]
+layout_mode = 1
+offset_top = 23.0
+offset_bottom = 55.0
+param_key = "vel_lum_fac"
+
+[node name="vel_pixelate" type="Label" parent="." unique_id=54812055]
+layout_mode = 0
+offset_left = 745.0
+offset_top = 8.0
+offset_right = 947.0
+offset_bottom = 31.0
+text = "Velocity Pixelate"
+
+[node name="vsb" parent="vel_pixelate" unique_id=1208008576 instance=ExtResource("1_464nk")]
+layout_mode = 1
+offset_top = 23.0
+offset_bottom = 55.0
+param_key = "vel_pix_size"
+
+[node name="ripples_on" type="Label" parent="." unique_id=1235353089]
+layout_mode = 0
+offset_left = 745.0
+offset_top = 131.0
+offset_right = 947.0
+offset_bottom = 154.0
+text = "ripples on"
+
+[node name="vsb" parent="ripples_on" unique_id=1210606495 instance=ExtResource("1_464nk")]
+layout_mode = 1
+offset_top = 23.0
+offset_bottom = 55.0
+param_key = "ripples_on"
+
+[node name="ripples_intensty" type="Label" parent="." unique_id=203809556]
+layout_mode = 0
+offset_left = 745.0
+offset_top = 186.0
+offset_right = 947.0
+offset_bottom = 209.0
+text = "ripples intensity"
+
+[node name="vsb" parent="ripples_intensty" unique_id=1854468162 instance=ExtResource("1_464nk")]
+layout_mode = 1
+offset_top = 23.0
+offset_bottom = 55.0
+param_key = "ripples_intensity"
+
+[node name="ripples_frequency" type="Label" parent="." unique_id=1207381036]
+layout_mode = 0
+offset_left = 745.0
+offset_top = 240.0
+offset_right = 947.0
+offset_bottom = 263.0
+text = "ripples frequency
+"
+
+[node name="vsb" parent="ripples_frequency" unique_id=627060528 instance=ExtResource("1_464nk")]
+layout_mode = 1
+offset_top = 23.0
+offset_bottom = 55.0
+param_key = "ripples_freq"
+
+[node name="ripples_numwaves" type="Label" parent="." unique_id=421022793]
+layout_mode = 0
+offset_left = 745.0
+offset_top = 294.0
+offset_right = 947.0
+offset_bottom = 317.0
+text = "ripples numwaves
+"
+
+[node name="vsb" parent="ripples_numwaves" unique_id=416692911 instance=ExtResource("1_464nk")]
+layout_mode = 1
+offset_top = 23.0
+offset_bottom = 55.0
+param_key = "ripples_numwaves"
+
+[node name="sobel_on" type="Label" parent="." unique_id=14247682]
+layout_mode = 0
+offset_left = 745.0
+offset_top = 375.0
+offset_right = 947.0
+offset_bottom = 398.0
+text = "sobel on
+"
+
+[node name="vsb" parent="sobel_on" unique_id=1534529242 instance=ExtResource("1_464nk")]
+layout_mode = 1
+offset_top = 23.0
+offset_bottom = 55.0
+param_key = "sobel_on"
+
+[node name="sobel_fac" type="Label" parent="." unique_id=2098048977]
+layout_mode = 0
+offset_left = 745.0
+offset_top = 429.0
+offset_right = 947.0
+offset_bottom = 452.0
+text = "sobel fac"
+
+[node name="vsb" parent="sobel_fac" unique_id=77462851 instance=ExtResource("1_464nk")]
+layout_mode = 1
+offset_top = 23.0
+offset_bottom = 55.0
+param_key = "sobel_fac"
+
+[node name="wind_on" type="Label" parent="." unique_id=1998998427]
+layout_mode = 0
+offset_left = 745.0
+offset_top = 514.0
+offset_right = 947.0
+offset_bottom = 537.0
+text = "wind on"
+
+[node name="vsb" parent="wind_on" unique_id=1682781239 instance=ExtResource("1_464nk")]
+layout_mode = 1
+offset_top = 23.0
+offset_bottom = 55.0
+param_key = "wind_on"
+
+[node name="wind_fac" type="Label" parent="." unique_id=1699264503]
+layout_mode = 0
+offset_left = 745.0
+offset_top = 578.0
+offset_right = 947.0
+offset_bottom = 601.0
+text = "wind fac"
+
+[node name="vsb" parent="wind_fac" unique_id=1172178416 instance=ExtResource("1_464nk")]
+layout_mode = 1
+offset_top = 23.0
+offset_bottom = 55.0
+param_key = "wind_fac"
+
+[node name="vortex" type="Label" parent="." unique_id=516320895]
+layout_mode = 0
+offset_left = 745.0
+offset_top = 632.0
+offset_right = 947.0
+offset_bottom = 655.0
+text = "vortex"
+
+[node name="vsb" parent="vortex" unique_id=1793939842 instance=ExtResource("1_464nk")]
+layout_mode = 1
+offset_top = 23.0
+offset_bottom = 55.0
+param_key = "vortex"
+
+[node name="vel_op_lb4" type="Label" parent="." unique_id=561287561]
+layout_mode = 0
+offset_left = 399.0
+offset_top = 375.0
+offset_right = 541.0
+offset_bottom = 424.0
+text = "operator (velocity)
+"
+
+[node name="vel_op_op_ob" type="OptionButton" parent="vel_op_lb4" unique_id=785790824]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 27.0
+offset_right = 63.0
+offset_bottom = 58.0
+selected = 0
+item_count = 6
+popup/item_0/text = "one"
+popup/item_0/id = 0
+popup/item_1/text = "min"
+popup/item_1/id = 1
+popup/item_2/text = "mul"
+popup/item_2/id = 2
+popup/item_3/text = "add"
+popup/item_3/id = 3
+popup/item_4/text = "sub"
+popup/item_4/id = 4
+popup/item_5/text = "max"
+popup/item_5/id = 5
+
+[node name="vel_op_lb5" type="Label" parent="." unique_id=1255585575]
+layout_mode = 0
+offset_left = 399.0
+offset_top = 439.0
+offset_right = 468.0
+offset_bottom = 488.0
+text = "param 1
+"
+
+[node name="vel_op_p1_ob" type="OptionButton" parent="vel_op_lb5" unique_id=1552399583]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 27.0
+offset_right = 63.0
+offset_bottom = 58.0
+selected = 0
+item_count = 3
+popup/item_0/text = "depth"
+popup/item_0/id = 0
+popup/item_1/text = "luminance"
+popup/item_1/id = 1
+popup/item_2/text = "1.0 - luminance"
+popup/item_2/id = 2
+
+[node name="vel_op_lb6" type="Label" parent="." unique_id=1762777056]
+layout_mode = 0
+offset_left = 564.0
+offset_top = 439.0
+offset_right = 633.0
+offset_bottom = 488.0
+text = "param 2
+"
+
+[node name="vel_op_p2_ob" type="OptionButton" parent="vel_op_lb6" unique_id=77655522]
+layout_mode = 0
+offset_top = 27.0
+offset_right = 114.0
+offset_bottom = 58.0
+selected = 1
+item_count = 3
+popup/item_0/text = "depth"
+popup/item_0/id = 0
+popup/item_1/text = "luminance"
+popup/item_1/id = 1
+popup/item_2/text = "1.0 - luminance"
+popup/item_2/id = 2
+
+[node name="vel_scale_fac_lb" type="Label" parent="." unique_id=375612864]
+layout_mode = 0
+offset_left = 399.0
+offset_top = 671.0
+offset_right = 555.0
+offset_bottom = 694.0
+text = "velocity vector scale"
+
+[node name="vsb" parent="vel_scale_fac_lb" unique_id=679040748 instance=ExtResource("1_464nk")]
+layout_mode = 1
+offset_top = 23.0
+offset_bottom = 55.0
+type = 2
+param_key = "vel_scale_fac"
+
+[node name="save_preset_bt" type="Button" parent="." unique_id=1774393121]
+layout_mode = 0
+offset_left = 1128.0
+offset_top = 758.0
+offset_right = 1244.0
+offset_bottom = 806.0
+text = "save_preset"
+
+[node name="LineEdit" type="LineEdit" parent="save_preset_bt" unique_id=136119194]
+layout_mode = 0
+offset_left = -90.0
+offset_top = -40.0
+offset_right = 231.0
+
+[node name="Label" type="Label" parent="save_preset_bt/LineEdit" unique_id=1666498546]
+layout_mode = 0
+offset_top = -24.0
+offset_right = 321.0
+offset_bottom = -1.0
+text = "New Preset Name"
+
+[node name="wave_cr" type="ColorRect" parent="." unique_id=1523512783]
+layout_mode = 0
+offset_left = 1038.0
+offset_right = 1391.0
+offset_bottom = 173.0
+color = Color(1, 1, 1, 0.2)
+
+[node name="Label" type="Label" parent="wave_cr" unique_id=981177047]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 86.0
+offset_right = 134.0
+offset_bottom = 135.0
+text = "Wave
+Frequency"
+
+[node name="wave_freq_sb" type="SpinBox" parent="wave_cr/Label" unique_id=2063269802]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 49.0
+offset_right = 84.5
+offset_bottom = 80.0
+step = 0.01
+
+[node name="Label2" type="Label" parent="wave_cr" unique_id=200900816]
+layout_mode = 0
+offset_left = 106.0
+offset_top = 86.0
+offset_right = 234.0
+offset_bottom = 135.0
+text = "Wave
+Amplitude"
+
+[node name="wave_amp_sb" type="SpinBox" parent="wave_cr/Label2" unique_id=461775425]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 49.0
+offset_right = 84.5
+offset_bottom = 80.0
+step = 0.01
+
+[node name="Label3" type="Label" parent="wave_cr" unique_id=272340966]
+layout_mode = 0
+offset_left = 220.0
+offset_top = 89.0
+offset_right = 348.0
+offset_bottom = 138.0
+text = "Wave
+Base"
+
+[node name="wave_base_sp" type="SpinBox" parent="wave_cr/Label3" unique_id=2087681957]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 49.0
+offset_right = 84.5
+offset_bottom = 80.0
+step = 0.01
+
+[node name="wave_on_cb" type="CheckButton" parent="wave_cr" unique_id=2001464831]
+layout_mode = 0
+offset_right = 44.0
+offset_bottom = 24.0
+text = "WAVE ON"
+
+[node name="Label4" type="Label" parent="wave_cr" unique_id=2005894026]
+layout_mode = 0
+offset_left = 129.0
+offset_top = 2.0
+offset_right = 348.0
+offset_bottom = 77.0
+text = "If on, the wave value will 
+be added to
+'Operator Fac' "
+
+[node name="wave_value_lb" type="Label" parent="wave_cr" unique_id=657671287]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 31.0
+offset_right = 135.0
+offset_bottom = 70.0
+text = "0.0"
+
+[connection signal="item_activated" from="ColorRect/presets_list" to="." method="_on_presets_list_item_activated"]
+[connection signal="item_selected" from="color_op_lb/op_op_ob" to="." method="_on_color_op_ob_item_selected"]
+[connection signal="item_selected" from="color_op_lb2/op_p1_ob" to="." method="_on_color_op_p_1_ob_item_selected"]
+[connection signal="item_selected" from="color_op_lb3/op_p2_ob" to="." method="_on_color_op_p_2_ob_item_selected"]
+[connection signal="item_selected" from="vel_op_lb4/vel_op_op_ob" to="." method="_on_vel_op_op_ob_item_selected"]
+[connection signal="item_selected" from="vel_op_lb5/vel_op_p1_ob" to="." method="_on_vel_op_p_1_ob_item_selected"]
+[connection signal="item_selected" from="vel_op_lb6/vel_op_p2_ob" to="." method="_on_vel_op_p_2_ob_item_selected"]
+[connection signal="pressed" from="save_preset_bt" to="." method="_on_save_preset_bt_pressed"]
+[connection signal="value_changed" from="wave_cr/Label/wave_freq_sb" to="." method="_on_wave_freq_sb_value_changed"]
+[connection signal="value_changed" from="wave_cr/Label2/wave_amp_sb" to="." method="_on_wave_amp_sb_value_changed"]
+[connection signal="value_changed" from="wave_cr/Label3/wave_base_sp" to="." method="_on_wave_base_sp_value_changed"]
+[connection signal="toggled" from="wave_cr/wave_on_cb" to="." method="_on_wave_on_cb_toggled"]

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bxgftg8wgoyhj"]
+
+[ext_resource type="Script" uid="uid://hyu4yv7iwpkk" path="res://scenes/key_map.gd" id="1"]
+
+[node name="key_map" type="Node" unique_id=1440291164]
+script = ExtResource("1")

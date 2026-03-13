@@ -1,0 +1,6 @@
+[gd_resource type="Resource" format=3 uid="uid://ddsf1dxawjhpu"]
+
+[ext_resource type="Script" uid="uid://btwia0vqyvga" path="res://libs/effect_preset.gd" id="1_ig165"]
+
+[resource]
+script = ExtResource("1_ig165")

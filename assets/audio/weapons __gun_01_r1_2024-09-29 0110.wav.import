@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dobh5yxkaxtw6"
+path="res://.godot/imported/weapons __gun_01_r1_2024-09-29 0110.wav-852c5022ec2e436a2b11cc911d5642da.sample"
+
+[deps]
+
+source_file="res://assets/audio/weapons __gun_01_r1_2024-09-29 0110.wav"
+dest_files=["res://.godot/imported/weapons __gun_01_r1_2024-09-29 0110.wav-852c5022ec2e436a2b11cc911d5642da.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

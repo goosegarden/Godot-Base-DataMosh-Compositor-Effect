@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://c64iuh6o6v7hw"]
+
+[ext_resource type="Script" uid="uid://c40wyml81je7j" path="res://scenes/fvec_spinbox.gd" id="1_oldgp"]
+
+[node name="fvec_spinbox" type="Control" unique_id=1042046049]
+custom_minimum_size = Vector2(348, 32)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 348.0
+offset_bottom = 32.0
+script = ExtResource("1_oldgp")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=925159803]
+visible = false
+custom_minimum_size = Vector2(120, 24)
+layout_mode = 0
+offset_right = 348.0
+offset_bottom = 31.0
+color = Color(0, 0, 0, 1)
+
+[node name="x" type="SpinBox" parent="." unique_id=1894201630]
+layout_mode = 0
+offset_right = 86.5
+offset_bottom = 31.0
+min_value = -100.0
+step = 0.01
+
+[node name="y" type="SpinBox" parent="." unique_id=1113048057]
+layout_mode = 0
+offset_left = 87.0
+offset_right = 173.5
+offset_bottom = 31.0
+min_value = -100.0
+step = 0.01
+
+[node name="z" type="SpinBox" parent="." unique_id=73411936]
+layout_mode = 0
+offset_left = 174.0
+offset_right = 260.5
+offset_bottom = 31.0
+min_value = -100.0
+step = 0.01
+
+[connection signal="value_changed" from="x" to="." method="_on_x_value_changed"]
+[connection signal="value_changed" from="y" to="." method="_on_y_value_changed"]
+[connection signal="value_changed" from="z" to="." method="_on_z_value_changed"]

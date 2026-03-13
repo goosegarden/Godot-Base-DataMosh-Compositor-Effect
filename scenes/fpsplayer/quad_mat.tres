@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://cq2sjpqn1fi51"]
+
+[ext_resource type="Shader" path="res://tools/fpsplayer/fpsplayer.gdshader" id="1_p1ti4"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_p1ti4")
+shader_parameter/edge_color = Color(1, 1, 1, 1)
+shader_parameter/threshold = 0.138
+shader_parameter/line_thickness = 0.225

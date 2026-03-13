@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://c5br868xnixdo"]
+
+[ext_resource type="Texture2D" uid="uid://cfns7ntvyx8dw" path="res://assets/graphics/smoke.png" id="1_dfs7f"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1utm8"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+specular_mode = 2
+disable_ambient_light = true
+disable_fog = true
+disable_specular_occlusion = true
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+albedo_texture = ExtResource("1_dfs7f")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 2
+particles_anim_v_frames = 2
+particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_s04ps"]
+_limits = [0.0, 0.3, 0.0, 1.0]
+_data = [Vector2(0, 0.1502546), 0.0, 0.0, 0, 0, Vector2(0.19999997, 0.04507643), -0.06897294, -0.06897294, 0, 0, Vector2(0.5199999, 0.021901548), 0.021780988, 0.021780988, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_13h0m"]
+curve = SubResource("Curve_s04ps")
+
+[sub_resource type="Curve" id="Curve_1utm8"]
+_limits = [0.0, 6.0, 0.0, 2.0]
+_data = [Vector2(0, 0.7028861), 0.0, 0.0, 0, 0, Vector2(0.48800004, 1.4312396), 0.0, 0.0, 0, 0, Vector2(1.4000001, 2.490662), 2.3958979, 2.3958979, 0, 0, Vector2(2, 2.8217316), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_ci18e"]
+curve = SubResource("Curve_1utm8")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_hq2iv"]
+lifetime_randomness = 0.63
+emission_shape = 2
+emission_sphere_radius = 1.0
+direction = Vector3(0, 0, -1)
+spread = 75.0
+initial_velocity_min = 3.0
+initial_velocity_max = 5.0
+angular_velocity_min = -1.6093254e-05
+angular_velocity_max = 0.9999839
+orbit_velocity_min = 0.5000001
+orbit_velocity_max = 1.0000001
+gravity = Vector3(0, 0, 0)
+scale_min = 4.0
+scale_max = 7.0
+scale_curve = SubResource("CurveTexture_ci18e")
+alpha_curve = SubResource("CurveTexture_13h0m")
+anim_offset_max = 1.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_av0re"]
+
+[node name="smoke" type="GPUParticles3D"]
+material_override = SubResource("StandardMaterial3D_1utm8")
+cast_shadow = 0
+emitting = false
+amount = 12
+lifetime = 3.0
+one_shot = true
+explosiveness = 0.94
+randomness = 0.75
+transform_align = 1
+process_material = SubResource("ParticleProcessMaterial_hq2iv")
+draw_pass_1 = SubResource("QuadMesh_av0re")

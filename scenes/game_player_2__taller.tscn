@@ -1,0 +1,161 @@
+[gd_scene format=3 uid="uid://bgtjlp5ahxyno"]
+
+[ext_resource type="Script" uid="uid://b5nib3qeoq7gs" path="res://scenes/game_player_2.gd" id="1_pko1u"]
+[ext_resource type="PackedScene" uid="uid://c5br868xnixdo" path="res://assets/graphics/smoke.tscn" id="2_ramhl"]
+[ext_resource type="AudioStream" uid="uid://dobh5yxkaxtw6" path="res://assets/audio/weapons __gun_01_r1_2024-09-29 0110.wav" id="3_8xvuk"]
+[ext_resource type="AudioStream" uid="uid://b2m5q7yelmkh4" path="res://assets/audio/powerUp8.mp3" id="4_yphv4"]
+
+[sub_resource type="CapsuleShape3D" id="1"]
+height = 2.248291
+
+[sub_resource type="QuadMesh" id="QuadMesh_3h1ky"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_p3ge7"]
+size = Vector3(0.2, 0.2, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jschr"]
+shading_mode = 0
+albedo_color = Color(0.8890821, 0.6793574, 0.22623146, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_i0xq8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b35k5"]
+shading_mode = 0
+albedo_color = Color(0, 0.423463, 0.503906, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tej6v"]
+size = Vector3(0.8, 1.8, 0.8)
+
+[sub_resource type="Animation" id="Animation_clu2s"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("base_cam/rotation_helper/gun_point/firelight:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_erm4m"]
+resource_name = "fire_gun"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("base_cam/rotation_helper/gun_point/firelight:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.133333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("gun_fx")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xilb5"]
+_data = {
+&"RESET": SubResource("Animation_clu2s"),
+&"fire_gun": SubResource("Animation_erm4m")
+}
+
+[node name="PlayerController" type="CharacterBody3D" unique_id=1522531706 groups=["agent", "player"]]
+script = ExtResource("1_pko1u")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=18644427]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1309855, 0)
+shape = SubResource("1")
+
+[node name="base_cam" type="Node3D" parent="." unique_id=1069174703]
+
+[node name="rotation_helper" type="Node3D" parent="base_cam" unique_id=1104822341]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -0.167)
+
+[node name="Camera3D" type="Camera3D" parent="base_cam/rotation_helper" unique_id=325340163]
+fov = 90.0
+near = 0.01
+far = 500.0
+
+[node name="pp_quad" type="MeshInstance3D" parent="base_cam/rotation_helper/Camera3D" unique_id=821816908]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.015)
+visible = false
+mesh = SubResource("QuadMesh_3h1ky")
+
+[node name="gun_point" type="MeshInstance3D" parent="base_cam/rotation_helper" unique_id=2105128407]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6732486, -0.718593, -0.15124977)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_p3ge7")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_jschr")
+
+[node name="RayCast3D" type="RayCast3D" parent="base_cam/rotation_helper/gun_point" unique_id=675704410]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.669287, 0.768053, 0.406141)
+enabled = false
+target_position = Vector3(0, 0, -30)
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="firelight" type="OmniLight3D" parent="base_cam/rotation_helper/gun_point" unique_id=1489797481]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650695, 1.59594, -0.702987)
+visible = false
+light_color = Color(0.8530528, 0.5223091, 7.70092e-07, 1)
+light_energy = 10.0
+shadow_enabled = true
+omni_range = 10.0
+omni_attenuation = -1.0
+
+[node name="smoke" parent="base_cam/rotation_helper/gun_point" unique_id=1108032232 instance=ExtResource("2_ramhl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6340542, -0.90230846, -2.4386725)
+visible = false
+
+[node name="bullet_pos" type="Node3D" parent="base_cam/rotation_helper/gun_point" unique_id=550384772]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.671474, 0.3106972, -0.70666665)
+
+[node name="gizmo" type="MeshInstance3D" parent="." unique_id=1877357181]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.999054, 0)
+visible = false
+mesh = SubResource("CapsuleMesh_i0xq8")
+surface_material_override/0 = SubResource("StandardMaterial3D_b35k5")
+
+[node name="gun_fx" type="AudioStreamPlayer3D" parent="." unique_id=2009140850]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.28872, -1.30044)
+stream = ExtResource("3_8xvuk")
+volume_db = -3.0
+
+[node name="hitbox" type="Area3D" parent="." unique_id=1315005630 groups=["hitbox"]]
+collision_layer = 131072
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="hitbox" unique_id=1354747599]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.889606, -0.0524271)
+shape = SubResource("BoxShape3D_tej6v")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1327342065]
+libraries/ = SubResource("AnimationLibrary_xilb5")
+
+[node name="collected" type="AudioStreamPlayer" parent="." unique_id=1377473691]
+stream = ExtResource("4_yphv4")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1897894804]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4336638, -0.4084828)
+light_energy = 1.4
+light_specular = 0.0
+omni_range = 7.0
+omni_attenuation = 0.6

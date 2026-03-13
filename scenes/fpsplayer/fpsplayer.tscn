@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://bxju08ldnnf3w"]
+
+[ext_resource type="Script" uid="uid://bytff4ifoxptg" path="res://scenes/fpsplayer/FpsPlayer.gd" id="1"]
+
+[sub_resource type="CapsuleShape3D" id="1"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_i0xq8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b35k5"]
+shading_mode = 0
+albedo_color = Color(0, 0.423463, 0.503906, 1)
+
+[node name="FPSPlayer" type="CharacterBody3D" unique_id=1503642740]
+script = ExtResource("1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2029709016]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00684, 0)
+shape = SubResource("1")
+
+[node name="base_cam" type="Node3D" parent="." unique_id=718248969]
+
+[node name="rotation_helper" type="Node3D" parent="base_cam" unique_id=785023448]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -0.5)
+
+[node name="Camera3D" type="Camera3D" parent="base_cam/rotation_helper" unique_id=850500266]
+fov = 90.0
+near = 0.01
+far = 500.0
+
+[node name="gizmo" type="MeshInstance3D" parent="." unique_id=289357555]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.999054, 0)
+visible = false
+mesh = SubResource("CapsuleMesh_i0xq8")
+surface_material_override/0 = SubResource("StandardMaterial3D_b35k5")
