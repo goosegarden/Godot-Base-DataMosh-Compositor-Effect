@@ -18,7 +18,7 @@ Datamoshing is a visual effect where motion data from previous frames bleeds int
 
 The result is somewhere between a glitch artifact, a ghosting effect, and something that feels almost organic. See it in a fully developed context in [Signals Adrift](https://goosegardenstd.itch.io/signals-adrift).
 
-[![Signals Adrift](media/signals_adrift_itch_cover.png)](https://goosegardenstd.itch.io/signals-adrift)
+[![Signals Adrift](media/signals_adrift_smaller_cover.png)](https://goosegardenstd.itch.io/signals-adrift)
 
 This version of the compositor effect has a slightly simplified set of parameters, for clarity.
 
