@@ -27,7 +27,7 @@ This version of the compositor effect has a slightly simplified set of parameter
 ## Requirements
 
 - Godot 4.4 or later
-- A GPU that supports the FRoward+ renderer.
+- A GPU that supports the Forward+ renderer.
 
 ---
 
