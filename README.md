@@ -97,7 +97,7 @@ The included presets are good starting points — you can use them as anchors an
 
 ## License
 
-MIT — see LICENSE file. Use it freely, credit appreciated but not required.
+© 2026 goosegardenstd — Licensed under CC BY-NC-ND 4.0. Free for personal/non-commercial use with attribution. Contact for commercial licensing.MIT — see LICENSE file. Use it freely, credit appreciated but not required.
 
 ---
 
